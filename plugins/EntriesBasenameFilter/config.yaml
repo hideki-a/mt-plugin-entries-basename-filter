@@ -1,0 +1,13 @@
+name: EntriesBasenameFilter
+version: 1.0
+author_name: Hideki Abe
+author_link: https://www.anothersky.pw/
+tags:
+    filters:
+        Entries:
+            basename_filter:
+                handler: >
+                    sub {
+                        my ( $ctx, $args, $cond ) = @_;
+                        $ctx->{ terms }->{ basename } = { like => $args->{ basename_filter } };
+                    }
